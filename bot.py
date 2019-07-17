@@ -68,7 +68,7 @@ async def addColumn():
 
 @client.command()
 async def joinMinecraft(ctx, username):
-    with MCRcon("MCRCON_IP", os.environ['MCRCON Pass']) as mcr:
+    with MCRcon("MCRCON_IP", os.environ['MCRCON_Pass']) as mcr:
         resp = mcr.command("/whitelist add " + username)
         print(resp)
 
