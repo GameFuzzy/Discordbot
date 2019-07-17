@@ -6,6 +6,7 @@ import os
 import discord
 import psycopg2
 from discord.ext import commands
+from mcrcon import MCRcon
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
@@ -65,6 +66,11 @@ async def addColumn():
         await wait_for(next_weekday(datetime.datetime.utcnow(), 1))
 
 
+@client.commmand()
+async def joinMinecraft(ctx, username):
+    with MCRcon("minkreft.majed.se", "sekret") as mcr:
+        resp = mcr.command("/whitelist add " + username)
+        print(resp)
 
 @client.command()
 async def testingmode(ctx):
