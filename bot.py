@@ -66,9 +66,9 @@ async def addColumn():
         await wait_for(next_weekday(datetime.datetime.utcnow(), 1))
 
 
-@client.commmand()
+@client.command()
 async def joinMinecraft(ctx, username):
-    with MCRcon("minkreft.majed.se", "sekret") as mcr:
+    with MCRcon("MCRCON IP", os.environ['MCRCON Pass']) as mcr:
         resp = mcr.command("/whitelist add " + username)
         print(resp)
 
