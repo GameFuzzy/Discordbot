@@ -1,3 +1,2 @@
 git+git://github.com/Rapptz/discord.py.git@rewrite#egg=discord.py[voice]
-git://github.com/MrReacher/async-mcrcon.git
 psycopg2-binary
